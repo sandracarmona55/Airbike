@@ -10,10 +10,12 @@
   <div class="bike-cards">
     <%  @bikes.each do |bike| %>
     <div class="bike-card">
-      <%= cl_image_tag bike.photo, crop: :fill, class: "bike-image" %>
+      <div class="div-image">
+        <%= cl_image_tag bike.photo, class: "bike-image" %>
+      </div>
       <div class="text-card">
         <h3 class="card-info"><%= link_to bike.name, bike_path(bike) %></h3>
-        <p class="card-info"><%= link_to bike.description.truncate(20), bike_path(bike) %></p>
+        <p class="card-info"><%= link_to bike.description.truncate(85), bike_path(bike) %></p>
       </div>
     </div>
     <% end %>
