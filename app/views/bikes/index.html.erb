@@ -1,19 +1,28 @@
 
 <!-- Div for the filters -->
 <div class="d-flex flex-row page-margin py-3">
-  <button class="bg-white py-2 px-5 mx-2" type="button">Dates</button>
-  <button class="bg-white py-2 px-5" type="button">Type</button>
+  <button class="bg-white py-2 px-5" type="button">Dates</button>
+  <button class="bg-white py-2 px-5 mx-2" type="button">Type</button>
 </div>
 
-  <%  @bikes.each do |bike| %>
-  <div class="card" style="width: 18rem;">
-    <%= cl_image_tag bike.photo, height: 300, width: 400, crop: :fill %>
-    <div class="card-body">
-      <p class="card-text"><%= link_to bike.name, bike_path(bike) %></p>
-      <p class="card-text"><%= link_to bike.description.truncate(20), bike_path(bike) %></p>
+<div class="index-cards">
+  <!-- Div of all the cards in grid form -->
+  <div class="bike-cards">
+    <%  @bikes.each do |bike| %>
+    <div class="bike-card">
+      <%= cl_image_tag bike.photo, crop: :fill, class: "bike-image" %>
+      <div class="text-card">
+        <h3 class="card-info"><%= link_to bike.name, bike_path(bike) %></h3>
+        <p class="card-info"><%= link_to bike.description.truncate(20), bike_path(bike) %></p>
+      </div>
     </div>
+    <% end %>
   </div>
-  <% end %>
+  <!-- Div of the map -->
+  <div>
+    <%= cl_image_tag("a2e71ff42u6p01bvtwbb", id: "map") %>
+  </div>
+</div>
 
 <%= link_to new_bike_path do %>
   <i class="fa fa-plus"></i> Add a new bike
