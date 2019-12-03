@@ -14,4 +14,10 @@ class BikesController < ApplicationController
   def create
     @bike = Bike.new(bike_params)
   end
+
+  private
+
+  def bike_params
+    params.require(:bike).permit(:name)
+  end
 end
