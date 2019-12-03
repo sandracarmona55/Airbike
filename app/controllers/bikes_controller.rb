@@ -12,5 +12,6 @@ class BikesController < ApplicationController
   end
 
   def create
-    @bike = Bike.create(params[:bike])
+    @bike = Bike.new(bike_params)
+  end
 end
