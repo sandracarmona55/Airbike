@@ -1,7 +1,11 @@
-<%= form_for (@bike) do |f| %>
-<%= f.label :name, "Enter name" %>
-<%= f.text_field :name %>
-<%= f.label :description, "Describe your bike" %>
-<%= f.text_field :description %>
+<%= simple_form_for (@bike) do |f| %>
+<%= f.input :name %>
+<%= f.input :description%>
+<%= f.input :category, :collection => %w[Mountainbike Citybike Tandem Race Other] %>
+<%= f.input :price%>
+<%= f.input :photo %>
+<%= f.input :photo_cache, as: :hidden %>
 <%= f.submit %>
 <% end %>
+
+<p><%= link_to "Back to all bikes", bikes_path %></p>
