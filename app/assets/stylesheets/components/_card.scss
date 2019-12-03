@@ -1,0 +1,34 @@
+.card-bike {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-bike p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+.card-bike .card-bike-infos {
+  padding: 16px;
+
+  position: relative;
+}
+
+.card-bike-pictures {
+  margin-top: 20px
+}
+
+.card-price-submit {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 16px;
+  text-align: center;
+  p {
+    font-size: 12px;
+    opacity: .7;
+    margin: 0;
+  }
+}
