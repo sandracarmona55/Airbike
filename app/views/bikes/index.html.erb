@@ -1,14 +1,18 @@
-<h1>All Bicycles you can rent</h1>
 <!-- Div for the filters -->
-<div class="d-flex flex-row">
+<div class="d-flex flex-row page-margin py-3">
   <button class="bg-white py-2 px-5 mx-2" type="button">Dates</button>
   <button class="bg-white py-2 px-5" type="button">Type</button>
 </div>
 
-<ul>
-  <h1><%  @bikes.each do |bike| %></h1>
-<li>
-<p><%= link_to bike.name, bike_path(bike) %></p>
-</li>
-<% end %>
-</ul>
+  <%  @bikes.each do |bike| %>
+  <div class="card" style="width: 18rem;">
+    <%= cl_image_tag bike.photo, height: 300, width: 400, crop: :fill %>
+    <div class="card-body">
+      <p class="card-text"><%= link_to bike.name, bike_path(bike) %></p>
+      <p class="card-text"><%= link_to bike.description.truncate(20), bike_path(bike) %></p>
+    </div>
+  </div>
+  <% end %>
+
+
+<!-- class: card-img-top -->
