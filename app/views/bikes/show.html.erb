@@ -1,3 +1,8 @@
 <h1><%= @bike.name %></h1>
 
-<p></p>
+<p>Description: <%= @bike.description%></p>
+<p>Category: <%= @bike.category%></p>
+<p>Price: <%= @bike.price%>€</p>
+<%= cl_image_tag @bike.photo, height: 300, width: 400, crop: :fill %>
+
+<p><%= link_to "Back to all bikes", bikes_path %></p>
