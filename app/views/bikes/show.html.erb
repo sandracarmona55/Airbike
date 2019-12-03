@@ -1,8 +1,28 @@
-<h1><%= @bike.name %></h1>
+<%= link_to "<<", bikes_path, class: "btn-back" %>
+<div class="container">
+  <div class="row">
+    <div class="col-9">
+      <div class="card-bike">
+        <div class="card-bike-pictures d-flex justify-content-around">
+          <%= cl_image_tag @bike.photo, height: 300, width: 350, crop: :fill %>
+          <%= cl_image_tag @bike.photo, height: 300, width: 350, crop: :fill %>
+        </div>
+        <div class="card-bike-infos">
+            <h3><%= @bike.name %></h1>
+            <p><%= @bike.description%></p>
+            <p>Category: <%= @bike.category%></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="card-price-submit">
+        <h3><%= @bike.price %>€</h3>
+        <p>(Price per day)</p>
+        <div class="btn-submit text-center my-5">
+          BOOK NOW
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>Description: <%= @bike.description%></p>
-<p>Category: <%= @bike.category%></p>
-<p>Price: <%= @bike.price%>€</p>
-<%= cl_image_tag @bike.photo, height: 300, width: 400, crop: :fill %>
-
-<p><%= link_to "Back to all bikes", bikes_path %></p>
