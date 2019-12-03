@@ -1,5 +1,4 @@
 // Specific CSS for your home-page
-
 .navbar-airbike {
   justify-content: space-between;
   background: white;
@@ -13,11 +12,6 @@
   width: 40px;
 }
 
-.stick {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
 .footer {
   background: #F4F4F4;
   display: flex;
@@ -26,6 +20,7 @@
   height: 100px;
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
+  margin-top: 7vh;
 }
 
 .footer-links {
