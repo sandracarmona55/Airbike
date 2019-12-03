@@ -1,1 +1,9 @@
 <h1>All Bicycles you cant rent</h1>
+
+<ul>
+  <h1><%  @bikes.each do |bike| %></h1>
+<li>
+<p><%= link_to bike.name, bike_path(bike) %></p>
+</li>
+<% end %>
+</ul>
