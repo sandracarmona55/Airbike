@@ -1,12 +1,13 @@
+<%= link_to "<<", bikes_path, class: "btn-back-to-bikes" %>
 <div class="container my-5">
   <div class="row justify-content-center">
     <div class="col-xs-12 col-md-5">
       <h2 class="text-center">Post your bike!</h2>
       <%= simple_form_for (@bike) do |f| %>
-      <%= f.input :name %>
+      <%= f.input :name, label: "Name of the bike"%>
       <%= f.input :description%>
       <%= f.input :address%>
-      <%= f.input :category, :collection => %w[Mountainbike Citybike Tandem Race Other] %>
+      <%= f.input :category, :collection => %w[Mountainbike Citybike Tandem Race Electric Other] %>
       <%= f.input :price%>
       <%= f.input :photo %>
       <%= f.input :photo_cache, as: :hidden %>
@@ -14,9 +15,6 @@
         <%= f.button :submit, "Create a Post" %>
       </div>
       <% end %>
-      <button class="btn-back my-2 rounded-lg font-weight-light">
-        <%= link_to "Back to all bikes", bikes_path %>
-      </button>
     </div>
   </div>
 </div>
