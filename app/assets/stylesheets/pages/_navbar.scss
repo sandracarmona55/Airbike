@@ -1,0 +1,31 @@
+.navbar-airbike {
+  justify-content: space-between;
+  background: white;
+}
+
+.navbar-airbike .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-airbike .navbar-brand img {
+  width: 40px;
+}
+
+.nav-link {
+  margin-right: 20px;
+  color: #FD894A !important;
+  background-color: white;
+  padding: 6px 24px;
+  border-radius: 4px;
+  border: 1px solid #FD894A;
+
+  &:hover {
+    border: 2px solid #FD894A;
+  }
+}
+
+.avatar {
+  &:hover {
+    border: 2px solid #FD894A;
+  }
+}
