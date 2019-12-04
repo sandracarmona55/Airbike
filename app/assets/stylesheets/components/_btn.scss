@@ -34,9 +34,15 @@
   background: #FD894A;
   transition: background 0.3s ease;
   text-decoration: none;
+
+  &:hover {
+    background: #F5A779;
+    color: white;
+  }
 }
 
 .btn-rent a {
   color: white;
+  text-decoration: none;
 }
 
