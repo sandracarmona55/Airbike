@@ -1,47 +1,25 @@
 // Specific CSS for your home-page
+.bike-picture {
+  background-size: cover;
+  background-position: center bottom;
+  padding: 100px 0;
+  height: 600px;
+  }
 
-.navbar-airbike {
-  justify-content: space-between;
-  background: white;
-}
-
-.navbar-airbike .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-airbike .navbar-brand img {
-  width: 40px;
-}
-
-.stick {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
-.footer {
-  background: #F4F4F4;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 100px;
-  padding: 0px 50px;
-  color: rgba(0,0,0,0.3);
-}
-
-.footer-links {
-  display: flex;
-  align-items: center;
-}
-.footer-links a {
-  color: black;
-  opacity: 0.15;
+.btn-rent {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #FD894A;
+  transition: background 0.3s ease;
   text-decoration: none;
-  font-size: 24px;
-  padding: 0px 10px;
 }
-.footer-links a:hover {
-  opacity: 1;
+
+.btn-rent a {
+  color: white;
 }
-.footer .fa-heart {
-  color: #D23333;
+
+.header {
+  font-size: 50px;
+  margin-bottom: 20px;
 }
