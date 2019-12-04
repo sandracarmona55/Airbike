@@ -3,6 +3,7 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   padding: 16px;
+  margin-bottom: 30px;
 }
 
 .card-bike p {
@@ -28,20 +29,22 @@
   padding: 16px;
   text-align: center;
   height: 200px;
-  position: relative;
+  // position: relative;
   p {
     font-size: 12px;
     opacity: .7;
   }
   .bike-show-price {
-        position: absolute;
-    top: 30px;
-    left: 133px;
+    margin-top: 20px !important;
+    //     position: absolute;
+    // top: 30px;
+    // left: 133px;
   }
   .btn-submit {
-    position: absolute;
-    top: 123px;
-    left: 110px;
+    // position: absolute;
+    // top: 123px;
+    // left: 110px;
+    margin-top: 20px !important;
   }
 }
 
