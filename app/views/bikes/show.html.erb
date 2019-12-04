@@ -1,11 +1,11 @@
 <%= link_to "<<", bikes_path, class: "btn-back-to-bikes" %>
 <div class="container">
   <div class="row">
-    <div class="col-9">
+
+    <div class="col-8">
       <div class="card-bike">
         <div class="card-bike-pictures d-flex justify-content-around">
-          <%= cl_image_tag @bike.photo, height: 300, width: 350, crop: :fill %>
-          <%= cl_image_tag @bike.photo, height: 300, width: 350, crop: :fill %>
+          <%= cl_image_tag @bike.photo %>
         </div>
         <div class="card-bike-infos">
             <h3><%= @bike.name %></h1>
@@ -13,15 +13,33 @@
             <p>Category: <%= @bike.category%></p>
         </div>
       </div>
+
+      <br>
+
+      <div class="card-bike d-flex justify-content-between">
+        <div class="card-address-infos">
+          <h6>ADDRESS OF THE BIKE</h6>
+          <div class="d-flex align-items-center">
+            <i class="fas fa-map-marked-alt"></i>
+            <p><%= @bike.address%></p>
+          </div>
+          <p class="pick-up-rules">The bike has to be picked up and returned at this same address</p>
+        </div>
+        <div class="card-address-map">
+          <img src="https://developers.google.com/maps/documentation/android-sdk/images/zoom-level-14.png" alt="">
+        </div>
+      </div>
     </div>
-    <div class="col-3">
+
+    <div class="col">
       <div class="card-price-submit">
-        <h3><%= @bike.price %>€</h3>
-        <p>(Price per day)</p>
-        <div class="btn-submit text-center my-5">
+        <div class="bike-show-price">
+          <h3><%= @bike.price %>€</h3>
+          <p>(Price per day)</p>
+        </div>
+        <div class="btn-submit text-center">
           BOOK NOW
         </div>
-
       </div>
     </div>
   </div>

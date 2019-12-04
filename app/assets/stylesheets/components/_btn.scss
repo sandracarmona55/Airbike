@@ -4,10 +4,9 @@
   border-radius: 4px;
   background: #FD894A;
   transition: background 0.3s ease;
-
-
+  
   &:hover {
-    background: #F5A779;
+    background: #FD894A;
     color: white;
   }
 }
@@ -21,7 +20,7 @@
 }
 
 .btn-back-to-bikes {
-  color: #1EDD88;
+  color: #FD894A;
   font-weight: bolder;
   margin: 30px;
   font-size: 30px;
