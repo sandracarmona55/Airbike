@@ -2,7 +2,7 @@
 <div class="container">
   <div class="row">
 
-    <div class="col-8">
+    <div class="col-lg-8 col-sm-12">
       <div class="card-bike">
         <div class="card-bike-pictures d-flex justify-content-around">
           <%= cl_image_tag @bike.photo %>
@@ -13,8 +13,6 @@
             <p>Category: <%= @bike.category%></p>
         </div>
       </div>
-
-      <br>
 
       <div class="card-bike d-flex justify-content-between">
         <div class="card-address-infos">
@@ -31,13 +29,15 @@
       </div>
     </div>
 
-    <div class="col">
+    <br>
+
+    <div class="col-lg-4 col-sm-12">
       <div class="card-price-submit">
-        <div class="bike-show-price">
+        <div class="bike-show-price ">
           <h3><%= @bike.price %>€</h3>
           <p>(Price per day)</p>
         </div>
-        <div class="btn-submit text-center">
+        <div class="btn-submit">
           BOOK NOW
         </div>
       </div>
