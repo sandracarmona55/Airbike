@@ -1,22 +1,23 @@
 
 <!-- Div for the filters -->
-<div class="d-flex flex-row page-margin py-3">
+<!-- <div class="d-flex flex-row page-margin py-3">
   <button class="py-2 px-5" type="button">Dates</button>
   <button class="py-2 px-5 mx-2" type="button">Type </button>
-</div>
+</div> -->
 
-<div class="index-cards">
+<div class="index-cards my-4 mx-4">
   <!-- Div of all the cards in grid form -->
   <div class="bike-cards">
     <%  @bikes.each do |bike| %>
+    <a class="link-none" href="<%= bike_path(bike) %>">
     <div class="bike-card">
       <div class="div-image">
         <%= cl_image_tag bike.photo, class: "bike-image" %>
       </div>
       <div class="text-card">
-        <h3 class="card-info"><%= link_to bike.name, bike_path(bike) %></h3>
-        <p class="card-info"><%= link_to bike.description.truncate(85), bike_path(bike) %></p>
-        <h2 class="price"> <%= bike.price %>€ </h2>
+        <h3 class="card-info"><%=bike.name%></h3>
+        <p class="card-info"><%=bike.description.truncate(90) %></p>
+        <h5 class="price"> <%= bike.price %>€ </h5>
       </div>
     </div>
     <% end %>
