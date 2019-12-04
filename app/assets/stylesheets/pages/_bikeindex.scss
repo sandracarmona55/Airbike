@@ -19,11 +19,12 @@
 .bike-image {
   object-fit: cover;
   width: 100%;
+  height: 280px;
 }
 
 .div-image {
   width: 100%;
-  height: 250px;
+  height: 280px;
 }
 
 .bike-card {
@@ -33,8 +34,11 @@
 }
 
 .text-card {
-  width: 350px;
+  width: 100%;
   padding: 10px;
+  margin: 0;
+  height: 100px;
+  position: relative;
 }
 
 .bike-card h3 {
@@ -58,8 +62,21 @@
 
 #map {
   height: 100vh;
+  background-size: cover;
   position: sticky;
   top: 0;
   width: 100%;
 }
 
+.price {
+  color: white;
+  background-color: #1BCB7F;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  position: absolute;
+  border-radius: 4px;
+  bottom: 104px;
+  left: 3px;
+}
