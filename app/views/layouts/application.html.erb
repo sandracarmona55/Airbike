@@ -16,6 +16,15 @@
           <img src="https://i.pinimg.com/originals/36/c1/db/36c1dbf12d0110b55426c6594991aae2.png" />
         </a>
 
+        <div class="search-form my-4 mx-4">
+          <%= form_tag bikes_path, method: :get do %>
+          <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Choose a location"%><%= submit_tag "Search", class: "btn btn-primary" %>
+          <% end %>
+          </div>
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
