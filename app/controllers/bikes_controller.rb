@@ -17,6 +17,7 @@ class BikesController < ApplicationController
 
   def show
     @bike = Bike.find(params[:id])
+    @booking = Booking.new
     @markers = [{ lat: @bike.latitude, lng: @bike.longitude, image_url: helpers.asset_url('https://moovitapp.com/images/splash-screen/local-icons/generic/Generic_Icon_Bike.png')}]
   end
 
