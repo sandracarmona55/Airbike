@@ -26,6 +26,8 @@
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                 <% if user_signed_in? %>
                   <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+                  <%= link_to "My bookings", index_requests_path, class: "dropdown-item" %>
+                  <%= link_to "My bikes", index_admin_path, class: "dropdown-item" %>
                 <% else %>
                   <%= link_to "Sign In", new_user_session_path, class: "dropdown-item" %>
                   <%= link_to "Sign Up", new_user_registration_path, class: "dropdown-item" %>
