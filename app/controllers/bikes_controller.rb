@@ -8,14 +8,16 @@ class BikesController < ApplicationController
     @markers = @bikes.map do |bike|
       {
         lat: bike.latitude,
-        lng: bike.longitude
+        lng: bike.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { bike: bike }),
+        image_url: helpers.asset_url('https://moovitapp.com/images/splash-screen/local-icons/generic/Generic_Icon_Bike.png')
       }
     end
   end
 
   def show
     @bike = Bike.find(params[:id])
-    @markers = [{ lat: @bike.latitude, lng: @bike.longitude }]
+    @markers = [{ lat: @bike.latitude, lng: @bike.longitude, image_url: helpers.asset_url('https://moovitapp.com/images/splash-screen/local-icons/generic/Generic_Icon_Bike.png')}]
   end
 
   def new
