@@ -1,6 +1,10 @@
 class BikesController < ApplicationController
   def index
-    @bikes = Bike.geocoded
+    if params[:query].present?
+      @bikes = Bike.geocoded.where("address ILIKE ?", "%#{params[:query]}%")
+    else
+      @bikes = Bike.geocoded
+    end
     @markers = @bikes.map do |bike|
       {
         lat: bike.latitude,
