@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :bikes do
     resources :bookings, only: [:create, :update]
   end
-  get '/bookings/requests', to: 'bookings#request', as: :request
-  get '/bookings/admin', to: 'bookings#admin', as: :admin
+  get '/bookings/index_requests', to: 'bookings#index_requests', as: :index_requests
+  get '/bookings/index_admin', to: 'bookings#index_admin', as: :index_admin
   root to: 'pages#home'
 end
