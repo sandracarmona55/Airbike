@@ -8,4 +8,8 @@ class Booking < ApplicationRecord
   def accepted?
     status == "accepted" || "rejected"
   end
+
+  def total_price(start_date, end_date, price)
+    price * (end_date - start_date).to_i
+  end
 end

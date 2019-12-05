@@ -1,5 +1,21 @@
-<% @bookings.each do |booking| %>
-  <%= booking.status %>
-  <%= booking.start_date %>
-
-<% end %>
+<div class="container">
+  <% @bookings.each do |booking| %>
+    <div class="card-product">
+      <div class="card-product-infos d-flex">
+        <%= cl_image_tag booking.bike.photo %>
+        <div class="card-product-infos">
+          <h2> <%= booking.bike.name %> </h2>
+          <p> <%= booking.bike.description %> </p>
+          <p> <%= booking.bike.address %> </p>
+        </div>
+      </div>
+      <div class="booking-dates">
+        <h5> From : <strong> <%= booking.start_date %> </strong> </h5>
+        <h5> Until : <strong> <%= booking.end_date %> </strong> </h5>
+      </div>
+      <div class="status">
+        <h4> <em> <%= booking.status %> </em> </h4>
+      </div>
+    </div>
+  <% end %>
+</div>
