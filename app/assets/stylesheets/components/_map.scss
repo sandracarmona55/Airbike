@@ -1,0 +1,22 @@
+.mapboxgl-popup {
+  max-width: 100px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  color: black;
+}
+
+.link-marker {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #FD894A;
+  transition: background 0.3s ease;
+
+    &:hover {
+    background: #F5A779;
+    color: white;
+  }
+}

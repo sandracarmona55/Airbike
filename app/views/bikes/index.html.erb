@@ -4,10 +4,22 @@
   <button class="py-2 px-5" type="button">Dates</button>
   <button class="py-2 px-5 mx-2" type="button">Type </button>
 </div> -->
+<div class="search-form my-4 mx-4">
+<%= form_tag bikes_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Choose a location"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+</div>
 
 <div class="index-cards my-4 mx-4">
   <!-- Div of all the cards in grid form -->
+
   <div class="bike-cards">
+
     <%  @bikes.each do |bike| %>
     <a class="link-none" href="<%= bike_path(bike) %>">
     <div class="bike-card">
@@ -19,15 +31,15 @@
         <p class="card-info"><%=bike.description.truncate(75) %></p>
         <h5 class="price"> <%= bike.price %>€ </h5>
       </div>
-    </div>
+    </div></a>
     <% end %>
   </div>
   <!-- Div of the map -->
-  <div id="map" style="width: 100%; height: 600px;"
+  <div id="map" style="width: 100%; height: 500px;"
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+
   ></div>
 </div>
-
 
 <!-- class: card-img-top -->
