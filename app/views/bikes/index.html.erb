@@ -19,7 +19,7 @@
         <p class="card-info"><%=bike.description.truncate(75) %></p>
         <h5 class="price"> <%= bike.price %>€ </h5>
       </div>
-    </div>
+    </div></a>
     <% end %>
   </div>
   <!-- Div of the map -->
@@ -28,6 +28,5 @@
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
   ></div>
 </div>
-
 
 <!-- class: card-img-top -->
