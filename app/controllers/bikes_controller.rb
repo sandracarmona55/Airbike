@@ -4,14 +4,16 @@ class BikesController < ApplicationController
     @markers = @bikes.map do |bike|
       {
         lat: bike.latitude,
-        lng: bike.longitude
+        lng: bike.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { bike: bike }),
+        image_url: helpers.asset_url('https://avatars2.githubusercontent.com/u/5470001?s=200&v=4')
       }
     end
   end
 
   def show
     @bike = Bike.find(params[:id])
-    @markers = [{ lat: @bike.latitude, lng: @bike.longitude }]
+    @markers = [{ lat: @bike.latitude, lng: @bike.longitude, image_url: helpers.asset_url('https://avatars2.githubusercontent.com/u/5470001?s=200&v=4')}]
   end
 
   def new
