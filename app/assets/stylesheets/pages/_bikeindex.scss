@@ -4,30 +4,24 @@
 }
 
 .index-cards {
-  display: grid;
-  grid-template-columns: 9fr 4fr;
+  display: flex;
 }
 
 .bike-cards {
   display: grid;
+  flex-grow: 1;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 35px;
-  padding-right: 35px;
+  padding: 0 35px;
 }
 
 @media (max-width: 992px) {
-  .index-cards {
-    grid-template-columns: 1fr 2fr;
-  }
   .bike-cards {
     grid-template-columns: 1fr 1fr;
   }
 }
 
 @media (max-width: 768px) {
-  .index-cards {
-    grid-template-columns: 1fr 1fr;
-  }
   .bike-cards {
     grid-template-columns: 1fr;
   }
@@ -48,15 +42,13 @@
 .bike-card {
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
   height: 290px;
-  width: 300px;
+  width: 100%;
   background-color: white;
   position: relative;
 }
 
 .text-card {
-  width: 300px;
   margin: 0;
-  height: 100px;
 }
 
 .bike-card h3 {
@@ -94,11 +86,10 @@ a:hover {
 }
 
 #map {
-  height: 640px;
-  background-size: cover;
   position: sticky;
-  top: 0;
-  width: 100%;
+  top: 0px;
+  flex: 0 0 420px;
+  height: 100vh;
 }
 
 .text-card .price {
@@ -113,7 +104,7 @@ a:hover {
   position: absolute;
   border-radius: 4px;
   bottom: 90px;
-  left: 253px;
+  right: -15px;
 }
 
 .bike-card:hover {

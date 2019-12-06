@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   end
 
   resources :bookings, only: [] do
+    resources :reviews , only: [:new, :create]
     member do
       patch '/accept', to: 'bookings#accept', as: :accept
       patch '/reject', to: 'bookings#reject', as: :reject
