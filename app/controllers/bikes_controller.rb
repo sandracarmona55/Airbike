@@ -10,7 +10,7 @@ class BikesController < ApplicationController
         lat: bike.latitude,
         lng: bike.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { bike: bike }),
-        image_url: helpers.asset_url('https://moovitapp.com/images/splash-screen/local-icons/generic/Generic_Icon_Bike.png')
+        image_url: helpers.asset_url('https://dbdzm869oupei.cloudfront.net/img/sticker/preview/3189.png')
       }
     end
   end
@@ -18,7 +18,7 @@ class BikesController < ApplicationController
   def show
     @bike = Bike.find(params[:id])
     @booking = Booking.new
-    @markers = [{ lat: @bike.latitude, lng: @bike.longitude, image_url: helpers.asset_url('https://moovitapp.com/images/splash-screen/local-icons/generic/Generic_Icon_Bike.png')}]
+    @markers = [{ lat: @bike.latitude, lng: @bike.longitude, image_url: helpers.asset_url('https://dbdzm869oupei.cloudfront.net/img/sticker/preview/3189.png') }]
   end
 
   def new

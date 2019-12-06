@@ -3,7 +3,11 @@
   background-size: cover;
   background-position: center bottom;
   padding: 100px 0;
-  height: 600px;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  bottom: 0;
   }
 
 .btn-rent {
@@ -20,7 +24,12 @@
 }
 
 .header {
-  font-size: 50px;
-  margin-bottom: 20px;
+  color: #3f393e;
+  h1 {
+    font-size: 48.83px;
+    margin-bottom: 20px;
+  }
+  p {
+    font-size: 20px;
+  }
 }
-

@@ -101,8 +101,10 @@ a:hover {
   width: 100%;
 }
 
-.price {
+.text-card .price {
   color: white;
+  width: 60px;
+  text-align: center;
   background-color: #FD894A;
   padding-left: 10px;
   padding-right: 10px;
@@ -113,3 +115,10 @@ a:hover {
   bottom: 90px;
   left: 253px;
 }
+
+.bike-card:hover {
+  box-shadow: 0 0 50px rgba(0,0,0,0.1);
+}
+
+
+
