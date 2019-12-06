@@ -1,29 +1,37 @@
 <div class="container">
+  <h2 class="index-title">My Bikes</h2>
   <% @bikes.each do |bike| %>
-  <% bike.bookings.each do |booking| %>
-    <div class="card-product">
-      <div class="card-product-infos d-flex">
-        <%= cl_image_tag booking.bike.photo %>
-        <div class="card-product-infos">
-          <h2> <%= booking.bike.name %> </h2>
-          <p> <%= booking.bike.description %> </p>
-          <p> <%= booking.bike.address %> </p>
+    <% bike.bookings.each do |booking| %>
+      <div class="row card-product">
+          <div class="col-5 card-product-infos d-flex">
+            <%= cl_image_tag booking.bike.photo %>
+            <div class="card-product-infos">
+              <h2> <%= booking.bike.name %> </h2>
+              <p> <%= booking.bike.description %> </p>
+              <p> <%= booking.bike.address %> </p>
+            </div>
+          </div>
+          <div class="col-3 booking-dates">
+            <h5> From : <strong> <%= booking.start_date %> </strong> </h5>
+            <h5> Until : <strong> <%= booking.end_date %> </strong> </h5>
+          </div>
+          <div class="col-2 booking-price">
+            <h5><%= booking.total_price(booking.start_date, booking.end_date, booking.bike.price) %>€ </h5>
+          </div>
+          <div class="col-1 status">
+            <% if booking.status == "pending" %>
+              <h6> <a href="<%= accept_booking_path(booking) %>"><i class="fas fa-check-square"></i></a> </h6>
+              <h6> <a href="<%= reject_booking_path(booking) %>"><i class="fas fa-times"></i></a> </h6>
+            <% else %>
+              <% if booking.status == "accepted" %>
+                <p> <i class="fas fa-check-square"></i> </p>
+              <% else %>
+                <p> <i class="fas fa-times"></i> </p>
+                <% end %>
+            <% end %>
+          </div>
         </div>
-      </div>
-      <div class="booking-dates">
-        <h5> From : <strong> <%= booking.start_date %> </strong> </h5>
-        <h5> Until : <strong> <%= booking.end_date %> </strong> </h5>
-      </div>
-      <div class="booking-price">
-        <h5><%= booking.total_price(booking.start_date, booking.end_date, booking.bike.price) %>€ </h5>
-      </div>
-      <div class="status">
-        <% if booking.accepted? == false %>
-          <%= link_to "Accept", accept_booking_path(booking), method: :patch, class: "btn-submit" %>
-          <%= link_to "Reject", reject_booking_path(booking), method: :patch, class: "btn btn-danger" %>
-        <% end %>
-      </div>
-    </div>
-  <% end %>
+    <% end %>
   <% end %>
 </div>
+

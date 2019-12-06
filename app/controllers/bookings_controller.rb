@@ -10,7 +10,7 @@ class BookingsController < ApplicationController
 
   def accept
     @booking = Booking.find(params[:id])
-    @booking.status = "accepted"
+    @booking.update(status: "accepted")
     redirect_to index_admin_path
   end
 
