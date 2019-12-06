@@ -20,8 +20,8 @@
           </div>
           <div class="col-1 status">
             <% if booking.status == "pending" %>
-              <h6> <a href="<%= accept_booking_path(booking) %>"><i class="fas fa-check-square"></i></a> </h6>
-              <h6> <a href="<%= reject_booking_path(booking) %>"><i class="fas fa-times"></i></a> </h6>
+              <h6> <a data-method="patch" href="<%= accept_booking_path(booking) %>"><i class="fas fa-check-square"></i></a> </h6>
+              <h6> <a data-method="patch" href="<%= reject_booking_path(booking) %>"><i class="fas fa-times"></i></a> </h6>
             <% else %>
               <% if booking.status == "accepted" %>
                 <p> <i class="fas fa-check-square"></i> </p>
