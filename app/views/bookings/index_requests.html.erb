@@ -8,7 +8,7 @@
           <h2> <%= booking.bike.name %> </h2>
           <p> <%= booking.bike.address %> </p>
           <% if booking.status == "accepted" %>
-            <p> <%= link_to "Leave a review", new_booking_review_path(booking) %> </p>
+            <p> <%= link_to "Leave a review", new_booking_review_path(booking), class:"btn-leave-review"%> </p>
           <% end %>
         </div>
       </div>

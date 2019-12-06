@@ -4,7 +4,7 @@
   border-radius: 4px;
   background: #FD894A;
   transition: background 0.3s ease;
-  
+
   &:hover {
     background: #FD894A;
     color: white;
@@ -24,6 +24,9 @@
   font-weight: bolder;
   margin: 30px;
   font-size: 30px;
+  &:hover {
+    color: #ff5900;
+  }
 }
 
 .btn-back a {

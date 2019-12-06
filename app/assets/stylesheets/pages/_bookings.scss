@@ -56,3 +56,12 @@
   font-size: 40px;
 }
 
+.btn-leave-review {
+  text-decoration: none;
+  color: #FD894A;
+  &:hover {
+    color: #ff5900;
+    opacity:1;
+  }
+}
+
