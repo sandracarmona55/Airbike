@@ -1,9 +1,8 @@
-<div class="bike-picture1" style="background-image: url(https://images.unsplash.com/photo-1526810961994-1c496b463907?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1347&q=80);">
-<%= link_to "<<", bikes_path, class: "btn-back-to-bikes" %>
-  <div class="container my-5">
-    <div class="row justify-content-center">
-      <div class="col-xs-12 col-md-5 shadow-sm p-3 mb-5 bg-white rounded">
-        <h2 class="text-center">Post your bike!</h2>
+<div class="page-container" style="height: 100vh; background-image: url(https://images.unsplash.com/photo-1526810961994-1c496b463907?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1347&q=80)">
+</div>
+  <%= link_to "<<", bikes_path, class: "btn-back-to-bikes" %>
+      <div class="form-bike shadow-sm p-3 bg-white rounded">
+        <h2 class="text-center" style="color:#FD894A">Post your bike!</h2>
         <%= simple_form_for (@bike) do |f| %>
           <%= f.input :name, label: "Name of the bike"%>
           <%= f.input :description%>
@@ -17,6 +16,3 @@
           </div>
         <% end %>
       </div>
-    </div>
-  </div>
-</div>

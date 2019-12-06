@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   get '/bookings/index_requests', to: 'bookings#index_requests', as: :index_requests
   get '/bookings/index_admin', to: 'bookings#index_admin', as: :index_admin
 
+  resources :bookings do
+    resources :reviews, only: [:new, :create]
+  end
+
   resources :bookings, only: [] do
     resources :reviews , only: [:new, :create]
     member do

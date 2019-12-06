@@ -6,9 +6,10 @@
         <%= cl_image_tag booking.bike.photo %>
         <div class="card-product-infos">
           <h2> <%= booking.bike.name %> </h2>
-          <p> <%= booking.bike.description %> </p>
           <p> <%= booking.bike.address %> </p>
-          <%= link_to "new review", new_booking_review_path(booking)  %>
+          <% if booking.status == "accepted" %>
+            <p> <%= link_to "Leave a review", new_booking_review_path(booking), class:"btn-leave-review"%> </p>
+          <% end %>
         </div>
       </div>
       <div class="col-3 booking-dates">
