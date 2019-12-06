@@ -3,7 +3,7 @@
   <div class="row">
 
     <div class="col-lg-8 col-sm-12">
-      <div class="card-bike">
+      <div class="card-show card-bike">
         <div class="card-bike-pictures d-flex justify-content-around">
           <%= cl_image_tag @bike.photo %>
         </div>
@@ -14,7 +14,7 @@
         </div>
       </div>
 
-      <div class="card-bike d-flex justify-content-between">
+      <div class="card-show d-flex justify-content-between">
         <div class="card-address-infos">
           <h6>ADDRESS OF THE BIKE</h6>
           <div class="d-flex align-items-center">
@@ -27,6 +27,12 @@
             data-markers="<%= @markers.to_json %>"
             data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
           ></div>
+      </div>
+
+      <div class="card-show d-flex justify-content-between">
+        <div class="card-review">
+          <h6>Reviews</h6>
+        </div>
       </div>
     </div>
 
@@ -42,7 +48,7 @@
           <%= simple_form_for([@bike, @booking]) do |b| %>
           <%= b.input :start_date %>
           <%= b.input :end_date %>
-          <%= b.submit %>
+          <%= b.submit "Ask for booking", class:"btn-submit ask-booking" %>
           <% end %>
         </div>
       </div>
