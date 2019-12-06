@@ -7,6 +7,7 @@
           <h2> <%= booking.bike.name %> </h2>
           <p> <%= booking.bike.description %> </p>
           <p> <%= booking.bike.address %> </p>
+          <%= link_to "new review", new_booking_review_path(booking)  %>
         </div>
       </div>
       <div class="booking-dates">
@@ -19,3 +20,8 @@
     </div>
   <% end %>
 </div>
+
+
+
+
+

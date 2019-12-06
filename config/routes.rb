@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/bookings/index_admin', to: 'bookings#index_admin', as: :index_admin
 
   resources :bookings, only: [] do
+    resources :reviews , only: [:new, :create]
     member do
       patch '/accept', to: 'bookings#accept', as: :accept
       patch '/reject', to: 'bookings#reject', as: :reject
