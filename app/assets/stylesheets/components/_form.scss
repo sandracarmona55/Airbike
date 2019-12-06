@@ -1,0 +1,23 @@
+.bike-picture1 {
+  background-size: cover;
+  background-position: center bottom;
+  top: 60px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  }
+
+.page-container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1
+}
+
+.form-bike {
+  width: 400px;
+  margin: auto;
+  margin-bottom: 30px;
+}

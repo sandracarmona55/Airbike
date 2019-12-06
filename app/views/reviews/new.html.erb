@@ -1,5 +1,46 @@
-<%= simple_form_for([@booking, @review]) do |form| %>
-  <%= form.input :title %>
-  <%= form.input :content, as: :text %>
-  <%= form.button :submit %>
-<% end %>
+<%= link_to "<<", index_requests_path, class: "btn-back-to-bikes" %>
+
+<div class="container">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-xs-12 col-md-5 shadow-sm p-3 mb-5 bg-white rounded">
+        <h2 class="text-center">Leave a review for this booking</h2>
+        <%= simple_form_for([@booking, @review]) do |form| %>
+          <%= form.input :title %>
+          <%= form.input :content, as: :text %>
+          <div class="btn-submit form-actions text-center">
+            <%= form.button :submit, "Leave a review" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="row card-product">
+      <div class="col-5 card-product-infos d-flex">
+        <%= cl_image_tag @booking.bike.photo %>
+        <div class="card-product-infos">
+          <h2> <%= @booking.bike.name %> </h2>
+          <p> <%= @booking.bike.address %> </p>
+        </div>
+      </div>
+      <div class="col-3 booking-dates">
+        <h6> From : <strong> <%= @booking.start_date %> </strong> </h6>
+        <h6> Until : <strong> <%= @booking.end_date %> </strong> </h6>
+      </div>
+      <div class="col-2 booking-price">
+        <h5><%= @booking.total_price(@booking.start_date, @booking.end_date, @booking.bike.price) %>€ </h5>
+      </div>
+      <div class="col-1 status">
+        <% if @booking.status == "accepted" %>
+          <p> <i class="fas fa-check-square"></i> </p>
+        <% elsif @booking.status == "rejected" %>
+          <p> <i class="fas fa-times"></i> </p>
+        <% elsif @booking.status == "pending" %>
+          <p> <i class="fas fa-clock"></i> </p>
+        <% end %>
+      </div>
+    </div>
+</div>
+
+
+

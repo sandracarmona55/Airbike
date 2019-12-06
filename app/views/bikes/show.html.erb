@@ -17,11 +17,10 @@
       <div class="card-show d-flex justify-content-between">
         <div class="card-address-infos">
           <h6>ADDRESS OF THE BIKE</h6>
-          <div class="d-flex align-items-center">
+          <div class="map-address d-flex justify-content-between">
             <i class="fas fa-map-marked-alt"></i>
             <p><%= @bike.address%></p>
           </div>
-          <p class="pick-up-rules">The bike has to be picked up and returned at this same address</p>
         </div>
           <div id="map" style="width: 100%; height: 250px;"
             data-markers="<%= @markers.to_json %>"
@@ -52,8 +51,8 @@
         </div>
         <div class="date-form">
           <%= simple_form_for([@bike, @booking]) do |b| %>
-          <%= b.input :start_date %>
-          <%= b.input :end_date %>
+          <%= b.input :start_date  %>
+          <%= b.input :end_date  %>
           <%= b.submit "Ask for booking", class:"btn-submit ask-booking" %>
           <% end %>
         </div>
