@@ -20,6 +20,7 @@
         <h5><%= booking.total_price(booking.start_date, booking.end_date, booking.bike.price) %>€ </h5>
       </div>
       <div class="col-1 status">
+        <!-- hello test -->
         <% if booking.status == "accepted" %>
           <p> <i class="fas fa-check-square"></i> </p>
         <% elsif booking.status == "rejected" %>
